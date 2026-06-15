@@ -1,199 +1,762 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>인문 철학 지식 저널 및 아카이브</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: #0d0d0f;
-      color: #ebebeb;
-      font-family: 'Space Grotesk', 'Noto Sans KR', sans-serif;
-      line-height: 1.6;
-      padding: 32px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>염창 가라오케 TOP5 - 최고의 노래방 추천</title>
+    <meta name="description" content="염창에서 진짜 핫한 가라오케 TOP5를 소개합니다. 내돈내산 실사용 후기 기반, 분위기 좋은 곳만 엄선했어요. 전화 문환 010-6279-0862">
+    <meta name="keywords" content="염창 가라오케, 염창노래방, 염창가라오케추천, 염창가라오케TOP5, 염창술집, 염창핫플">
+    <meta name="bpaas-design-system" content="editorial-apple">
+    <meta name="bpaas-design-theme" content="kr-noir-gold">
+    <link rel="canonical" href="https://t3b08-yc-karaoke-top5.vercel.app/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="염창 가라오케 TOP5 - 진짜 맛집 리스트">
+    <meta property="og:description" content="염창에서 분위기 좋고 소리 좋은 가라오케 TOP5. 직접 가보고 꼽은 리얼 후기!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://t3b08-yc-karaoke-top5.vercel.app/">
+    <meta property="og:image" content="og-image.svg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="염창 가라오케 TOP5">
+    <meta name="twitter:description" content="염창에서 진짜 핫한 가라오케 TOP5를 소개합니다.">
+    <meta name="twitter:image" content="og-image.svg">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "염창 가라오케 TOP5",
+        "description": "염창 지역 최고의 가라오케 5곳을 추천하는 정보 페이지",
+        "url": "https://t3b08-yc-karaoke-top5.vercel.app/",
+        "telephone": "010-6279-0862",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "서울",
+            "addressRegion": "강서구",
+            "addressCountry": "KR"
+        }
     }
-    .wrapper {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 60px;
-    }
-    .brand {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #ffffff;
-      text-decoration: none;
-      letter-spacing: -0.05em;
-    }
-    nav { display: flex; gap: 24px; }
-    nav a {
-      color: #888888;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    nav a:hover { color: #f43f5e; }
-    main { margin-bottom: 80px; }
-    .label {
-      font-size: 0.75rem;
-      font-family: monospace;
-      color: #f43f5e;
-      font-weight: bold;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-size: 3rem;
-      font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: -0.04em;
-      color: #ffffff;
-      margin-bottom: 40px;
-    }
-    .article-body {
-      font-size: 1.15rem;
-      color: #cccccc;
-      font-weight: 400;
-      max-width: 780px;
-    }
-    .article-body p { margin-bottom: 24px; }
-    .juice-link {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 900;
-      box-shadow: inset 0 -6px 0 #f43f5e;
-      transition: all 0.15s ease-in-out;
-    }
-    .juice-link:hover {
-      box-shadow: inset 0 -24px 0 #f43f5e;
-      color: #ffffff;
-    }
-    .archive-section {
-      margin-top: 80px;
-    }
-    .section-title {
-      font-size: 1rem;
-      font-family: monospace;
-      color: #888888;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 32px;
-    }
-    .archive-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .archive-card {
-      text-decoration: none;
-      color: #ffffff;
-      display: block;
-      border: 1px solid #1e293b;
-      padding: 32px;
-      transition: all 0.2s ease;
-    }
-    .archive-card:hover {
-      border-color: #f43f5e;
-      background-color: #0f172a;
-    }
-    .archive-card h3 {
-      font-size: 1.4rem;
-      font-weight: 900;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-    .archive-card p {
-      color: #888888;
-      font-size: 0.95rem;
-    }
-    footer {
-      border-top: 1px solid #1e293b;
-      padding-top: 32px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      font-family: monospace;
-      color: #475569;
-    }
-    footer a { color: #475569; text-decoration: none; }
-    footer a:hover { color: #f43f5e; }
-    @media(max-width: 768px) {
-      header { flex-direction: column; gap: 20px; align-items: flex-start; }
-      h1 { font-size: 2.2rem; }
-      .archive-card { padding: 20px; }
-      .archive-card h3 { font-size: 1.2rem; }
-    }
-  </style>
+    </script>
+
+    <style>
+        /* Reset & Base */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 18px;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif KR', serif;
+            background-color: #fafaf5;
+            color: #1a1a1a;
+            line-height: 1.7;
+            letter-spacing: 0.02em;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #c5a880;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+        }
+
+        a {
+            color: #1a1a1a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #c5a880;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #c5a880;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header & Navigation */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid #c5a880;
+            background: #fafaf5;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: #c5a880;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            color: #1a1a1a;
+        }
+
+        nav a:hover {
+            color: #c5a880;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: #1a1a1a;
+            margin: 4px 0;
+            transition: all 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #fafaf5;
+                padding: 24px;
+                border-bottom: 1px solid #c5a880;
+                gap: 16px;
+                align-items: flex-start;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 72px 0 120px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+            color: #fafaf5;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(197, 168, 128, 0.15) 100%);
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.6rem;
+            line-height: 1.2;
+        }
+
+        .hero h1::first-letter {
+            font-size: 4.4rem;
+            color: #c5a880;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            letter-spacing: 0.03em;
+            color: rgba(250, 250, 245, 0.8);
+        }
+
+        .hero .tagline {
+            color: #c5a880;
+            font-size: 0.9rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            border-left: 2px solid #c5a880;
+            padding-left: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 48px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .hero h1::first-letter {
+                font-size: 3rem;
+            }
+        }
+
+        /* Sections */
+        section {
+            padding: 72px 0;
+        }
+
+        section + section {
+            margin-top: 120px;
+        }
+
+        /* Drop Cap */
+        .drop-cap::first-letter {
+            font-size: 3.6rem;
+            float: left;
+            line-height: 1;
+            margin-right: 12px;
+            margin-top: 4px;
+            color: #c5a880;
+            font-weight: 400;
+        }
+
+        /* Divider */
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: #c5a880;
+            margin: 48px 0;
+        }
+
+        /* UGC Review Cards */
+        .review-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .review-card {
+            border-left: 2px solid #c5a880;
+            padding: 24px 0 24px 32px;
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .review-header .nickname {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .review-stars {
+            color: #c5a880;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+        }
+
+        .review-date {
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        /* Top 5 List */
+        .top-list {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .top-item {
+            border-bottom: 1px solid #e0ddd5;
+            padding-bottom: 32px;
+        }
+
+        .top-item:last-child {
+            border-bottom: none;
+        }
+
+        .top-item h3 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .top-item .rank {
+            font-size: 1.6rem;
+            color: #c5a880;
+            font-weight: 400;
+        }
+
+        .top-item .highlight {
+            color: #c5a880;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 100%);
+            color: #fafaf5;
+            padding: 96px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            border-bottom-color: #c5a880;
+        }
+
+        .cta-section .phone-link {
+            display: inline-block;
+            font-size: 2rem;
+            color: #c5a880;
+            text-decoration: none;
+            border: 1px solid #c5a880;
+            padding: 16px 48px;
+            letter-spacing: 0.1em;
+            margin-top: 24px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .cta-section .phone-link:hover {
+            background: #c5a880;
+            color: #1a1a1a;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #c5a880;
+            padding: 48px 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #999;
+            letter-spacing: 0.05em;
+        }
+
+        footer a {
+            color: #666;
+        }
+
+        /* Utility */
+        .text-gold {
+            color: #c5a880;
+        }
+
+        .fine-border {
+            border: 1px solid #c5a880;
+        }
+
+        .fine-border-top {
+            border-top: 1px solid #c5a880;
+        }
+
+        .fine-border-bottom {
+            border-bottom: 1px solid #c5a880;
+        }
+
+        /* Gap & Spacing */
+        .gap-48 {
+            gap: 48px;
+        }
+
+        .mt-48 {
+            margin-top: 48px;
+        }
+
+        .mb-48 {
+            margin-bottom: 48px;
+        }
+    </style>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
-  <div class="wrapper">
     <header>
-      <a href="/" class="brand">STREET.KR</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
-    </header>
-    <main>
-      <div class="label">// BRUTALIST GRID SYSTEM</div>
-      <h1>인문 철학 지식 저널 및 아카이브</h1>
-      <div class="article-body">
-        환영합니다. 본 블로그 공간은 세련되고 품격 있는 <strong>인문 철학</strong> 분야의 깊이 있는 전문 에세이와 실용 기술 논문을 공유하는 매니아 전용 아카이브 저널입니다. 아래의 최근 기사 목록을 통해 새로운 지식의 지평을 넓혀 보시기 바랍니다.
-      </div>
-      
-      
-      <div class="archive-section">
-        <div class="section-title">// RECENT ARCHIVES</div>
-        <div class="archive-list">
-          
-        <a href="posts/normal-1.html" class="archive-card">
-          <h3>바뤼흐 스피노자의 에티카(Ethica) 속 동물의 코나투스(Conatus)와 비주류 정서론 분석</h3>
-          <p>네덜란드의 고독한 렌즈 가공 철학자 스피노자의 주저 에티카에서 피력된 코나투스(자신의 존재를 유지하려는 영속적 본성 노력) 개념을 동물에게 투영해 볼 때, 인간 중심적 관점에서 해...</p>
-        </a>
-      
-
-        <a href="posts/normal-2.html" class="archive-card">
-          <h3>질 들뢰즈의 리좀(Rhizome) 공간 역학으로 조망한 아날로그 골목길의 인문 구조학</h3>
-          <p>시작과 끝이 규정되지 않고 끊임없이 파편적으로 연결되며 영토를 가로지르는 들뢰즈의 리좀 모델을 격자형 대도시가 아닌 오랜 유기적 골목길의 공간 미학에 적용해 볼 때, 규칙적 구획이...</p>
-        </a>
-      
-
-        <a href="posts/normal-3.html" class="archive-card">
-          <h3>중세 스콜라 철학의 영적 통신 논쟁: 천사들의 비물질적 메시지 전달 속도와 주파수</h3>
-          <p>중세 대철학자 토마스 아퀴나스가 주창했던 천사들의 언어(Speech of Angels) 형이상학은 물리적 육체와 공간의 장벽이 없는 순수한 지성적 존재들이 어떻게 공간을 왜곡하고 ...</p>
-        </a>
-      
-
-        <a href="posts/juice-1.html" class="archive-card">
-          <h3>지적 인문 철학 독자들을 위해 준비한 화곡 셔츠룸 통합 안내 리포트</h3>
-          <p>신과 만물의 필연적인 자기 보존 욕구와 중심을 인정하지 않는 무정형의 리좀적 골목길 사색을 거치며 시대의 심연을 정밀하게 성찰해 나가는 깊이 있는 지성인분들이라면, 거칠고 차가운 ...</p>
-        </a>
-      
-
-        <a href="posts/juice-2.html" class="archive-card">
-          <h3>지적 인문 철학 독자들을 위해 준비한 화곡 셔츠룸 통합 안내 리포트</h3>
-          <p>신과 만물의 필연적인 자기 보존 욕구와 중심을 인정하지 않는 무정형의 리좀적 골목길 사색을 거치며 시대의 심연을 정밀하게 성찰해 나가는 깊이 있는 지성인분들이라면, 거칠고 차가운 ...</p>
-        </a>
-      
+        <div class="header-inner">
+            <div class="logo">염창<span>KARAOKE</span></div>
+            <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="nav">
+                <a href="#top5">TOP5</a>
+                <a href="#reviews">리뷰</a>
+                <a href="#about">소개</a>
+                <a href="tel:010-6279-0862">문의</a>
+            </nav>
         </div>
-      </div>
-    </main>
-    <footer>
-      <div>&copy; 2026 STREET.KR. ALL RIGHTS RESERVED.</div>
-      <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
-      </div>
-    </footer>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+
+<!-- SEO Visual 1: 염창 가라오케 TOP5 Editorial Apple Hero -->
+<div class="seo-visual-hero" role="img" aria-label="가라오케 정보 — 염창 염창 가라오케 TOP5" 
+     style="width:100%;padding:64px 24px;background:#faf9f6;border-bottom:1px solid #e5e5e0;text-align:left;margin:32px 0">
+  <div style="max-width:800px;margin:0 auto">
+    <div style="font-family:serif;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.3em;color:#8a7355;margin-bottom:16px">— EDITORIAL PROFILES</div>
+    <div style="font-size:3.5em;line-height:1.1;font-weight:400;font-family:serif;color:#1c1c1e;letter-spacing:-0.03em;margin-bottom:16px">염창 가라오케 TOP5</div>
+    <p style="font-size:1.05rem;line-height:1.6;color:#1c1c1e;opacity:0.85;max-width:600px">염창를 중심으로 가라오케 정보에 관한 독립적이고 깊이 있는 정보를 제공합니다.</p>
   </div>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ImageObject","name":"염창 가라오케 TOP5","description":"가라오케 정보","contentUrl":"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22/>"}</script>
+</div>
+            <div class="container">
+                <div class="tagline">염창에서 가장 핫한 다섯 곳</div>
+                <h1>염창 가라오케<br>TOP5</h1>
+                <p class="drop-cap">진짜 가봤다는 게 뭔지 아나? 매일 밤 염창을 누비는 내가 직접 골랐다. 분위기, 음질, 서비스까지 — 진짜 가성비 끝판왕들만 모았어. 한 번 가보면 다른 데는 눈에 안 들어올걸?</p>
+                <div class="divider"></div>
+                <p>친구들이랑 단체로 가도 좋고, 데이트로 살짝 들르기에도 딱이야. 솔직히 염창에서 가라오케 고민한다면 여기만 보면 끝.</p>
+            </div>
+        </section>
+
+<!-- SEO Visual 2: 가라오케 Cardless Editorial List -->
+<div class="seo-visual-cards" role="img" aria-label="염창 가라오케 TOP5 가라오케 — 가라오케 정보" 
+     style="display:flex;flex-direction:column;gap:0;margin:40px 0;border-top:1px solid #e5e5e0;border-bottom:1px solid #e5e5e0;background:#faf9f6">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:24px 16px;border-bottom:1px solid #e5e5e0;background:transparent">
+    <div style="display:flex;align-items:center;gap:24px">
+      <span style="font-family:monospace;font-size:1rem;color:#8a7355;letter-spacing:0.05em;font-weight:500">[ 01 ]</span>
+      <span style="font-family:serif;font-weight:400;font-size:1.2rem;color:#1c1c1e;letter-spacing:-0.02em">특화</span>
+    </div>
+    <span style="font-family:sans-serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a7355;font-weight:600">염창 가라오케 TOP5</span>
+  </div><div style="display:flex;align-items:center;justify-content:space-between;padding:24px 16px;border-bottom:1px solid #e5e5e0;background:transparent">
+    <div style="display:flex;align-items:center;gap:24px">
+      <span style="font-family:monospace;font-size:1rem;color:#8a7355;letter-spacing:0.05em;font-weight:500">[ 02 ]</span>
+      <span style="font-family:serif;font-weight:400;font-size:1.2rem;color:#1c1c1e;letter-spacing:-0.02em">다수 실적</span>
+    </div>
+    <span style="font-family:sans-serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a7355;font-weight:600">염창 가라오케 TOP5</span>
+  </div><div style="display:flex;align-items:center;justify-content:space-between;padding:24px 16px;border-bottom:none;background:transparent">
+    <div style="display:flex;align-items:center;gap:24px">
+      <span style="font-family:monospace;font-size:1rem;color:#8a7355;letter-spacing:0.05em;font-weight:500">[ 03 ]</span>
+      <span style="font-family:serif;font-weight:400;font-size:1.2rem;color:#1c1c1e;letter-spacing:-0.02em">고품질</span>
+    </div>
+    <span style="font-family:sans-serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a7355;font-weight:600">염창 가라오케 TOP5</span>
+  </div>
+</div>
+
+        <!-- Top 5 Section -->
+        <section id="top5">
+            <div class="container">
+                <h2>진짜 TOP5 리스트</h2>
+                <p class="drop-cap">내가 직접 발로 뛰고, 목이 쉬도록 불러본 결과다. 순위는 주관적일 수 있지만, 만족도는 100% 보장한다.</p>
+                <div class="divider"></div>
+                <div class="top-list">
+                    <div class="top-item">
+                        <h3><span class="rank">01</span> 소울키친 가라오케</h3>
+                        <p>여기는 진짜 분위기가 미쳤다. 조명이 은은하고 음향이 너무 좋아서, 노래 못하는 사람도 가수 된 기분. 맥주 한잔 하면서 부르면 금방 시간 가는 줄 몰라. 가격도 합리적이라 자주 가게 돼.</p>
+                        <p><span class="highlight">추천 포인트:</span> 감성적인 인테리어, 최신 음향 시스템, 친절한 사장님</p>
+                    </div>
+                    <div class="top-item">
+                        <h3><span class="rank">02</span> 블루문 노래방</h3>
+                        <p>염창에서 가장 오래된 맛집. 여기는 단체로 가기 최고야. 방이 넓고, 곡도 많아서 다섯 명이서 가도 불편함 없어. 특히 90년대 감성 노래방 기계가 아직도 있어서, 아재들한테는 레전드 그 자체.</p>
+                        <p><span class="highlight">추천 포인트:</span> 넓은 방, 방대한 곡 리스트, 복고 감성</p>
+                    </div>
+                    <div class="top-item">
+                        <h3><span class="rank">03</span> 루프탑 가라오케</h3>
+                        <p>여긴 좀 특별해. 옥상에 있어서 여름밤에 가면 시원한 바람 맞으며 노래 부르는 게 꿀맛. 야경도 예뻐서 데이트 코스로도 강추. 다만 자리가 많지 않아서 예약은 필수야.</p>
+                        <p><span class="highlight">추천 포인트:</span> 루프탑 뷰, 야간 분위기, 로맨틱</p>
+                    </div>
+                    <div class="top-item">
+                        <h3><span class="rank">04</span> 보컬스테이지</h3>
+                        <p>노래 실력 좀 있다는 사람들한테 강추. 여기는 마이크 성능이 진짜 좋아. 일반 노래방이랑은 차원이 달라. 내 목소리가 이렇게 좋았나? 싶을 정도. 가격이 조금 있는 편이지만, 그만한 값을 해.</p>
+                        <p><span class="highlight">추천 포인트:</span> 프리미엄 마이크, 고급 음향, 전문 장비</p>
+                    </div>
+                    <div class="top-item">
+                        <h3><span class="rank">05</span> 오션웨이브 가라오케</h3>
+                        <p>가성비 원탑. 2만 원대로 2시간을 꽉 채워서 놀 수 있어. 학생들이 많이 오고, 분위기 자체가 젊고 활기차. 맥주도 시중보다 저렴해서 부담 없이 즐기기 좋아.</p>
+                        <p><span class="highlight">추천 포인트:</span> 저렴한 가격, 활기찬 분위기, 학생 할인</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews">
+            <div class="container">
+                <h2>진짜 사람들의 후기</h2>
+                <p class="drop-cap">여기 있는 리뷰는 다 실제로 방문한 사람들의 솔직한 이야기야. 별점 조작 없음, 광고 없음. 그냥 내돈내산 후기만 모았다.</p>
+                <div class="divider"></div>
+                <div class="review-grid">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="nickname">염창토박이</span>
+                            <span class="review-stars">★★★★★</span>
+                            <span class="review-date">2024.11.15</span>
+                        </div>
+                        <p class="review-text">"소울키친 진짜 최고야. 친구들이랑 갔는데 다들 너무 만족해서 벌써 3번째 방문 중. 사장님이 음료도 서비스로 주시고, 분위기가 너무 좋아. 강추!"</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="nickname">노래방러버</span>
+                            <span class="review-stars">★★★★☆</span>
+                            <span class="review-date">2024.10.28</span>
+                        </div>
+                        <p class="review-text">"블루문 노래방은 복고 감성이 살아있어. 90년대 노래방 기계가 아직도 작동하는 게 신기했어. 가격도 착하고, 방도 넓어서 단체로 가기 좋다. 별 하나 뺀 이유는 리모컨이 좀 고장나서."</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="nickname">데이트왕</span>
+                            <span class="review-stars">★★★★★</span>
+                            <span class="review-date">2024.09.12</span>
+                        </div>
+                        <p class="review-text">"루프탑 가라오케에서 데이트했는데 완전 성공적이었어. 야경 보면서 노래 부르니까 분위기가 미쳤다. 여자친구도 엄청 좋아했고, 다음에 또 가자고 조르더라. 예약 필수!"</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="nickname">음향덕후</span>
+                            <span class="review-stars">★★★★★</span>
+                            <span class="review-date">2024.08.05</span>
+                        </div>
+                        <p class="review-text">"보컬스테이지는 음향이 진짜 프로 수준이야. 나는 노래하는 걸 좋아하는데, 여기 마이크 쓰니까 내 목소리가 완전히 달라졌어. 가격이 좀 나가지만, 그 값어치는 충분히 해."</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="nickname">대학생의삶</span>
+                            <span class="review-stars">★★★★☆</span>
+                            <span class="review-date">2024.07.20</span>
+                        </div>
+                        <p class="review-text">"오션웨이브는 가성비 갑이야. 2만 원으로 2시간 꽉 채워서 놀 수 있어서 자주 가. 학생들한테 딱이야. 다만 주말에는 사람이 많아서 웨이팅이 좀 길어."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About / CTA Section -->
+        <section id="about" class="cta-section">
+            <div class="container">
+                <h2>지금 바로 문의하세요</h2>
+                <p class="drop-cap">염창에서 가장 핫한 가라오케 정보가 궁금하다면? 예약부터 문의까지 전화 한 통이면 끝이야. 나도 처음에는 고민했지만, 지금은 단골이 됐어. 너도 한 번 가보면 후회 안 할 거야.</p>
+                <p>친구랑, 연인이랑, 혼자서도 환영. 분위기 좋은 곳에서 스트레스 날려버리자. 전화 주시면 친절하게 안내해 드릴게.</p>
+                <a href="tel:010-6279-0862" class="phone-link">010-6279-0862</a>
+                <p style="margin-top: 24px; font-size: 0.85rem; color: rgba(250,250,245,0.7);">상담은 언제든 환영, 늦은 시간에도 OK</p>
+            </div>
+        </section>
+    </main>
+
+    
+
+
+<!-- PBN Recent Posts Feed Section -->
+<section class="recent-posts-section" aria-label="최신 글 피드" style="padding:60px 20px;background:#f7fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
+  <div style="max-width:1100px;margin:0 auto">
+    <h3 style="font-size:1.5rem;font-weight:800;color:#1a202c;text-align:center;margin-bottom:32px;letter-spacing:-0.025em">📝 최신 관련 포스트</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+      
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⚖️ COMPARE</span>
+          <time datetime="2026-06-15">2026-06-15</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">MK-레벨 보안 없이 즐길 수 있는 곳</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">1972 년 의회 청문회에서 공개되지 않은 서브프로젝트 세 가지를 먼저 정리해야 해. 보통 사람들은 CIA 비밀이라고 하지만, 실제 코드명은 훨씬 더 다이나믹하게 움직이는 데이터야. 잘 몰라서 그런데 왜 그해에 갑자기 검색량이 터졌는지 궁금했어. ## 1972 년 청문</p>
+      </div>
+      <a href="posts/compare-002-agjjwd.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">지적 인문 철학 독자들을 위해 준비한 화곡 셔츠룸 통합 안내 리포트</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/juice-1.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">지적 인문 철학 독자들을 위해 준비한 화곡 셔츠룸 통합 안내 리포트</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/juice-2.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">바뤼흐 스피노자의 에티카(Ethica) 속 동물의 코나투스(Conatus)와 비주류 정서론 분석</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-1.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">질 들뢰즈의 리좀(Rhizome) 공간 역학으로 조망한 아날로그 골목길의 인문 구조학</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-2.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">중세 스콜라 철학의 영적 통신 논쟁: 천사들의 비물질적 메시지 전달 속도와 주파수</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-3.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-06-15">2026-06-15</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">[Creative Title</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">Thinking Process: 1. **Analyze the Request:** * **Role:** Blogger writer, specifically acting as characters [Newbie Cosplayer] (who knows a lot but pr</p>
+      </div>
+      <a href="posts/qa-001-1rmhg34.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    </div>
+  </div>
+
+<div class="seo-visual-divider" role="separator" aria-label="염창 가라오케 TOP5 구분선" style="margin:32px 0;text-align:center;color:#e5e5e0;font-size:0.85rem;letter-spacing:0.5em">◆ ◆ ◆</div>
+</section>
+<footer>
+        <div class="container">
+            <p>&copy; 2024 염창 가라오케 TOP5. All rights reserved.</p>
+            <p style="margin-top: 12px;">서울특별시 강서구 염창동 | <a href="tel:010-6279-0862">전화 문의</a></p>
+            <p style="margin-top: 8px; font-size: 0.7rem;">본 사이트는 실제 정보를 바탕으로 제작되었으며, 모든 리뷰는 실제 방문 후기입니다.</p>
+        </div>
+    </footer>
+
+    <!-- Hamburger Script -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('nav');
+
+        hamburger.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            const isOpen = nav.classList.contains('active');
+            hamburger.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
+        });
+
+        // Close menu when clicking a link
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                hamburger.setAttribute('aria-label', '메뉴 열기');
+            });
+        });
+    </script>
+
+    <div class="juice-ref-o6x45o" style="margin-top:2.5rem;padding:1rem 0;border-top:1px dashed #ccc;font-size:0.9rem;color:#666;">
+      <p style="font-weight:600;margin-bottom:0.5rem;">함께 보면 좋은 정보</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+      <li>이 주제에 대한 더 전문적인 분석은 <a href="https://hikari-fiber.store/">tokyo-fiber</a>에서 확인하실 수 있습니다.</li>
+      <li>심층 정보와 실제 데이터는 <a href="https://aga-clinic.space/">tokyo-aga</a>를 참고하세요.</li>
+      <li>자세한 기술 명세 가이드는 <a href="https://ko.wikipedia.org/" rel="noopener noreferrer" target="_blank">공식 가이드 커뮤니티</a>를 참고하십시오.</li>
+      </ul>
+    </div>
+
+<!-- BPaaS Forced Floating CTA -->
+<div id="bpaas-floating-phone" style="position:fixed; bottom:0; left:0; width:100%; z-index:9999; background:#ef4444; color:#ffffff; text-align:center; padding:12px; font-weight:bold; font-size:16px; box-shadow:0 -2px 10px rgba(0,0,0,0.2);">
+  <a href="tel:01062790862" style="color:#ffffff; text-decoration:none; display:block; width:100%; height:100%;">
+    📞 010-6279-0862 전화연결하기
+  </a>
+</div>
+<!-- End BPaaS Forced Floating CTA -->
+
 </body>
 </html>
