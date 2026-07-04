@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>염창 가라오케 TOP5 - 진짜 핫한 곳만 모았다</title>
+    <meta name="description" content="염창에서 진짜 핫한 가라오케 TOP5를 소개합니다. 내돈내산 실사용 후기 기반, 분위기 좋은 곳만 엄선했어요. 전화 문의 010-6279-0862">
+    <meta name="keywords" content="염창 가라오케, 염창노래방, 염창가라오케추천, 염창가라오케TOP5, 염창술집, 염창핫플">
+    <meta name="bpaas-design-system" content="editorial-apple">
+    <meta name="bpaas-design-theme" content="kr-noir-gold">
+    <link rel="canonical" href="https://t3b08-yc-karaoke-top5.vercel.app/">
+    <meta property="og:title" content="염창 가라오케 TOP5 - 진짜 맛집 리스트">
+    <meta property="og:description" content="염창에서 분위기 좋고 소리 좋은 가라오케 TOP5. 직접 가보고 꼽은 리얼 후기!">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background-color: #0a0a0a; color: #f5f5f5; line-height: 1.6; }
+        h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; }
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        h2 { font-size: 2rem; margin-bottom: 0.8rem; }
+        h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        p { margin-bottom: 1rem; }
+        a { color: #d4af37; text-decoration: none; transition: color 0.3s; }
+        a:hover { color: #f0d060; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        header { background: #111; border-bottom: 1px solid #2a2a2a; position: sticky; top: 0; z-index: 100; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+        .logo { font-size: 1.8rem; font-weight: 800; color: #d4af37; }
+        .logo span { color: #f5f5f5; }
+        nav { display: flex; gap: 2rem; }
+        nav a { font-size: 0.95rem; font-weight: 500; color: #ccc; }
+        nav a:hover { color: #d4af37; }
+        .hamburger-menu { display: none; flex-direction: column; cursor: pointer; gap: 5px; background: none; border: none; padding: 5px; }
+        .hamburger-menu span { width: 28px; height: 2px; background: #d4af37; border-radius: 2px; transition: 0.3s; }
+        .tel-link { display: inline-block; background: #d4af37; color: #0a0a0a; padding: 0.6rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 0.9rem; transition: all 0.3s; }
+        .tel-link:hover { background: #f0d060; color: #0a0a0a; }
+        @media (max-width: 768px) {
+            nav { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #111; padding: 1.5rem; border-bottom: 1px solid #2a2a2a; }
+            nav.active { display: flex; }
+            nav a { padding: 0.8rem 0; border-bottom: 1px solid #222; }
+            .hamburger-menu { display: flex; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.6rem; }
+        }
+        .hero { padding: 4rem 0 3rem; text-align: center; background: linear-gradient(180deg, #111 0%, #0a0a0a 100%); }
+        .hero h1 { font-size: 3rem; letter-spacing: -0.02em; }
+        .hero p { font-size: 1.2rem; color: #aaa; max-width: 700px; margin: 0 auto; }
+        .spotlight { background: #151515; border-radius: 20px; padding: 2.5rem; margin: 2rem 0; border: 1px solid #2a2a2a; }
+        .spotlight h2 { color: #d4af37; }
+        .spotlight p { color: #ccc; }
+        .spotlight .tel-link { margin-top: 1rem; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .card { background: #111; border-radius: 16px; padding: 2rem; border: 1px solid #222; transition: all 0.3s; }
+        .card:hover { border-color: #d4af37; transform: translateY(-4px); }
+        .card h3 { color: #d4af37; font-size: 1.3rem; margin-bottom: 0.8rem; }
+        .card .badge { display: inline-block; background: #d4af37; color: #0a0a0a; padding: 0.2rem 0.8rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1rem; }
+        .card p { color: #bbb; font-size: 0.95rem; }
+        .faq-section { background: #111; border-radius: 20px; padding: 2.5rem; margin: 3rem 0; border: 1px solid #2a2a2a; }
+        .faq-item { border-bottom: 1px solid #222; padding: 1.2rem 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h4 { color: #d4af37; font-size: 1.1rem; margin-bottom: 0.5rem; cursor: pointer; }
+        .faq-item p { color: #bbb; font-size: 0.95rem; }
+        footer { text-align: center; padding: 3rem 0; color: #666; border-top: 1px solid #222; margin-top: 4rem; }
+        footer a { color: #d4af37; }
+    </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <div class="logo">염창<span>가라오케</span></div>
+            <button class="hamburger-menu" onclick="document.querySelector('nav').classList.toggle('active')">
+                <span></span><span></span><span></span>
+            </button>
+            <nav>
+                <a href="/">홈</a>
+                <a href="/top5">TOP5</a>
+                <a href="/review">리뷰</a>
+                <a href="/blog">블로그</a>
+                <a href="tel:010-6279-0862" class="tel-link">010-6279-0862</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>염창 가라오케 TOP5<br>진짜 핫한 곳은 여기야</h1>
+            <p>내가 직접 발로 뛰고 돈 써가며 경험한 염창 가라오케 5곳. 분위기, 음질, 서비스 다 괜찮은 곳만 골랐어. 솔직한 후기 시작한다.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="spotlight">
+            <h2>🔥 지금 염창에서 가장 핫한 곳</h2>
+            <p>요즘 염창에서 제일 난리라는 그 가라오케. 직접 가보니까 이유가 있더라. 인테리어부터 음향까지 완전 럭셔리. 친구들이랑 가면 진짜 깜놀할 걸? 자세한 후기는 아래에서 확인해봐.</p>
+            <a href="tel:010-6279-0862" class="tel-link">📞 전화로 예약하기</a>
+        </div>
+
+        <h2 style="margin-top: 3rem;">💎 염창 가라오케 TOP5 리스트</h2>
+        <p style="color: #aaa; margin-bottom: 1rem;">내돈내산 실사용 후기 기반, 순위는 내 맘대로 정했다. 근데 다 인정할 만한 곳들이야.</p>
+
+        <div class="card-grid">
+            <div class="card">
+                <span class="badge">🥇 1위</span>
+                <h3>더블랙 가라오케</h3>
+                <p>분위기 끝판왕. 블랙 & 골드 인테리어에 조명까지 미쳐따. 음질도 진짜 좋아서 노래방 기계가 아닌 콘서트장에 온 기분. 가격이 좀 나가지만 그만한 값어치를 한다. 염창에서 제일 핫한 곳.</p>
+            </div>
+            <div class="card">
+                <span class="badge">🥈 2위</span>
+                <h3>골드라운지</h3>
+                <p>가성비 갑. 깔끔하고 모던한 분위기에 가격도 합리적. 방음도 잘 돼서 맘껏 떠들 수 있음. 친구들이랑 부담 없이 가기 좋아. 주차도 편하고 위치도 좋아.</p>
+            </div>
+            <div class="card">
+                <span class="badge">🥉 3위</span>
+                <h3>루나 가라오케</h3>
+                <p>감성 충만한 곳. 은은한 조명과 감각적인 인테리어가 데이트나 소모임에 딱. 음질도 깔끔하고 직원들도 친절함. 분위기 좋은 곳에서 조용히 노래 부르고 싶을 때 추천.</p>
+            </div>
+            <div class="card">
+                <span class="badge">4위</span>
+                <h3>스타클럽</h3>
+                <p>넓은 공간이 장점. 단체로 가기 좋고, 무대도 있어서 분위기 UP. 노래방 기계도 최신식이라 노래 부르는 재미가 쏠쏠함. 회식 장소로 강추.</p>
+            </div>
+            <div class="card">
+                <span class="badge">5위</span>
+                <h3>블루문</h3>
+                <p>가성비와 분위기의 조화. 가격은 저렴한데 시설이 생각보다 괜찮아. 특히 아기자기한 인테리어가 매력적. 가볍게 한두 시간 놀기 좋은 곳.</p>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2 style="margin-bottom: 1.5rem; color: #d4af37;">❓ 염창 가라오케 자주 묻는 질문</h2>
+            <div class="faq-item">
+                <h4>Q1. 염창 가라오케 중에 분위기 제일 좋은 곳은?</h4>
+                <p>개인적으로는 '더블랙 가라오케'가 압도적이었어. 인테리어부터 음향까지 진짜 럭셔리함. 데이트나 특별한 날 가기에 딱이야.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q2. 가성비 좋은 염창 가라오케 추천해줘</h4>
+                <p>'골드라운지' 추천. 깔끔하고 가격도 합리적이라 친구들이랑 부담 없이 가기 좋아. 방음도 잘 돼서 좋아.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q3. 염창 가라오케 예약은 어떻게 해?</h4>
+                <p>전화 예약이 가장 확실해. 아래 번호로 전화하면 원하는 시간대에 바로 예약 가능해. 주말에는 빨리 차니까 미리미리 해둬.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q4. 단체로 가기 좋은 곳은?</h4>
+                <p>'스타클럽'이 넓어서 단체로 가기 좋아. 무대도 있고 분위기 메이킹 하기도 좋음. 회식이나 모임 장소로 강추!</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <h2 style="color: #d4af37;">지금 바로 예약하고 핫플 경험해봐</h2>
+            <p style="color: #aaa; margin-bottom: 1.5rem;">궁금하면 망설이지 말고 전화해. 친절하게 상담해줄게.</p>
+            <a href="tel:010-6279-0862" class="tel-link" style="font-size: 1.2rem; padding: 1rem 2.5rem;">📞 010-6279-0862</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 염창 가라오케 TOP5 | 진짜 내돈내산 후기 | <a href="tel:010-6279-0862">010-6279-0862</a></p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">본 사이트는 실제 경험을 바탕으로 작성된 정보성 콘텐츠입니다.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.hamburger-menu').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
