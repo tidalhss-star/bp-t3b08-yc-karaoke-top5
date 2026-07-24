@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img">
-  <metadata>BPaaS site identity 393dbe46d31891f1</metadata>
-  <rect width="64" height="64" rx="15" fill="hsl(253 48% 43%)"/>
-  <path d="M35 0h29v64H21Z" fill="hsl(346 79% 55%)" opacity="0.82"/>
-  <g transform="rotate(241 32 32)" opacity="0.42"><rect x="16" y="16" width="32" height="32" rx="5" fill="none" stroke="#101418" stroke-width="7" transform="rotate(45 32 32)"/></g>
-  <text x="32" y="39" text-anchor="middle" fill="#101418" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="0">YI</text>
+  <title>염창 가라오케 TOP5</title>
+  <rect width="64" height="64" rx="11" fill="hsl(253 44% 31%)"/>
+  <path d="M64 0v26L38 0Z" fill="hsl(8 68% 59%)" opacity="0.16"/>
+  <g transform="rotate(90 32 32)"><circle cx="25" cy="32" r="13" fill="none" stroke="hsl(253 24% 96%)" stroke-width="8"/><circle cx="39" cy="32" r="13" fill="none" stroke="hsl(8 68% 59%)" stroke-width="8"/></g>
 </svg>
